@@ -5,12 +5,13 @@ cloud:
     hostname: ""
 sql:  
   - engine: "postgresql"
-    queries: "./db/query/"
-    schema: "./db/migration/"
+    queries: "./db/query"
+    schema: "./db/migration"
     gen:
       go:
         package: "db"
         out: "./db/sqlc"
+        emit_json_tags: true
         sql_package: "database/sql"
 overrides:
     go: null
